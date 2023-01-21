@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Keys, StorageService } from 'src/app/services/storage.service';
 import { ActivityService } from '../activity.service';
 import { Activity } from '../models/Activity.model';
 

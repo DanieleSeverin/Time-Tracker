@@ -24,7 +24,7 @@ export class ActivityListComponent implements OnInit {
     const dialogRef = this.dialog.open(AddActivityModalComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.addActivity(result.description);
+      if(result) this.addActivity(result.description);
     });
   }
 
