@@ -11,7 +11,7 @@ import { Activity } from '../models/Activity.model';
 export class ActivityListComponent implements OnInit {
 
   @Input() Activities: Activity[] = [];
-  @Output() addActivityEvent = new EventEmitter<Activity>();
+  @Output() addActivityEvent = new EventEmitter<string>();
   @Output() deleteActivityEvent = new EventEmitter<Activity>();
   @Output() tickEvent = new EventEmitter();
   
@@ -29,12 +29,7 @@ export class ActivityListComponent implements OnInit {
   }
 
   addActivity(description: string){
-    const activity: Activity = {
-      description,
-      time: 0,
-      active: false
-    }
-    this.addActivityEvent.emit(activity);
+    this.addActivityEvent.emit(description);
   }
 
   startActivity(activity :Activity){
