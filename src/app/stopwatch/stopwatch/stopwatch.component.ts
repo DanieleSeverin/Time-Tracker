@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Keys, StorageService } from 'src/app/services/storage.service';
+import { ActivityService } from '../activity.service';
 import { Activity } from '../models/Activity.model';
 
 @Component({
@@ -10,9 +12,28 @@ export class StopwatchComponent implements OnInit {
 
   Activities: Activity[] = [];
 
-  constructor() { }
+  constructor(private _activity : ActivityService) { }
 
   ngOnInit(): void {
+    this.getActivities();
+  }
+
+  getActivities(): void {
+    this.Activities = this._activity.getActivities();
+  }
+
+  addActivity(activity: Activity): void {
+    this._activity.addActivity(activity);
+    this.getActivities();
+  }
+
+  deleteActivity(activity: Activity): void {
+    this._activity.deleteActivity(activity);
+    this.getActivities();
+  }
+
+  saveActivities(): void {
+    this._activity.saveActivities(this.Activities);
   }
 
 }

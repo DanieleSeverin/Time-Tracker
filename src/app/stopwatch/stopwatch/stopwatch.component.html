@@ -1,1 +1,4 @@
-<app-activity-list [Activities]="Activities"></app-activity-list>
+<app-activity-list [Activities]="Activities" 
+                   (addActivityEvent)="addActivity($event)"
+                   (deleteActivityEvent)="deleteActivity($event)"
+                   (tickEvent)="saveActivities()"></app-activity-list>

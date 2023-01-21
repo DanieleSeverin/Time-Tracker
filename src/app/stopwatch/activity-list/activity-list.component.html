@@ -1,9 +1,13 @@
 <ng-container *ngIf="Activities.length > 0; else noData">
-    <mat-selection-list [multiple]="false">
-        <mat-list-option *ngFor="let activity of Activities" [value]="activity">
-            <app-activity [activity]="activity"></app-activity>
-        </mat-list-option>
-    </mat-selection-list>
+    <mat-list role="list">
+        <mat-list-item role="listitem" class="mb-5" *ngFor="let activity of Activities">
+            <app-activity class="w-100" [activity]="activity" 
+                                        (startActivityEvent)="startActivity($event)"
+                                        (deleteActivityEvent)="deleteActivity($event)"
+                                        (tickEvent)="tick()">
+            </app-activity>
+        </mat-list-item>
+    </mat-list>
 </ng-container>
 
 <ng-template #noData>

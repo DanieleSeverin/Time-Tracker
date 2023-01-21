@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 
+export enum Keys{
+  Activities = 'Activities'
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -7,15 +11,16 @@ export class StorageService {
 
   constructor() { }
 
-  get(key: string): any {
-    return JSON.parse(localStorage.getItem(key) || '{}' );
+  get(key: Keys): any {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
   }
 
-  set(key: string, value: any): void {
+  set(key: Keys, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  remove(key: string): void {
+  remove(key: Keys): void {
     localStorage.removeItem(key);
   }
 

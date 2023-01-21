@@ -1,11 +1,13 @@
 <div *ngIf="activity" class="box d-flex j-between p-2">
-    <div>
+    <div class="w-25">
         {{activity.description}}
     </div>
-    <div>
-        {{activity.time}}
+    <div class="w-25 d-flex j-center">
+        {{activity.time | hhmmss}}
     </div>
-    <div>
-        azioni
+    <div class="w-25 d-flex j-end a-center gap-5">
+        <button *ngIf="!activity.active" mat-raised-button color="primary" (click)="startActivity(activity)">Start</button>
+        <button *ngIf="activity.active" mat-raised-button color="accent" (click)="stopActivity(activity)">Stop</button>
+        <mat-icon class="pointer" color="warn" (click)="deleteActivity(activity)">delete_forever</mat-icon>
     </div>
 </div>

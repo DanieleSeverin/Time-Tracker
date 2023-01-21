@@ -17,10 +17,12 @@ import {MatInputModule} from '@angular/material/input';
 //Components
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HhmmssPipe } from './pipes/hhmmss.pipe';
 
 const components = [
   NavbarComponent,
   LayoutComponent,
+  HhmmssPipe,
 ];
 
 const modules = [
