@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'StopWatch'`, () => {
+  it(`should have as title 'TimeTracker'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('StopWatch');
+    expect(app.title).toEqual('TimeTracker');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('StopWatch app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('TimeTracker app is running!');
   });
 });

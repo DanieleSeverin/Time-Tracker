@@ -1,10 +1,10 @@
-# StopWatch App
+# Time Tracker App
 
 A simple Angular app that allows users to track time spent on various activities.
 
 ## Installation
 
-Clone the repository to your local machine using `git clone https://github.com/DanieleSeverin/StopWatch.git`
+Clone the repository to your local machine using `git clone https://github.com/DanieleSeverin/Time-Tracker.git`
 Install the dependencies by running `npm i` in the project directory
 Start the project by running `ng serve`
 
