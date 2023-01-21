@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { ActivityService } from '../activity.service';
 import { Activity } from '../models/Activity.model';
@@ -34,6 +35,10 @@ export class StopwatchComponent implements OnInit {
 
   saveActivities(): void {
     this._activity.saveActivities(this.Activities);
+  }
+
+  drop(event: CdkDragDrop<Activity[]>) {
+    moveItemInArray(this.Activities, event.previousIndex, event.currentIndex);
   }
 
 }

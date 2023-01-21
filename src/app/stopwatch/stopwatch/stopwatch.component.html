@@ -1,4 +1,5 @@
 <app-activity-list [Activities]="Activities" 
                    (addActivityEvent)="addActivity($event)"
                    (deleteActivityEvent)="deleteActivity($event)"
-                   (tickEvent)="saveActivities()"></app-activity-list>
+                   (tickEvent)="saveActivities()"
+                   (dropEvent)="drop($event)"></app-activity-list>

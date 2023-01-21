@@ -1,6 +1,6 @@
 <ng-container *ngIf="Activities.length > 0; else noData">
-    <mat-list role="list">
-        <mat-list-item role="listitem" class="mb-5" *ngFor="let activity of Activities">
+    <mat-list class="list" role="list" cdkDropList (cdkDropListDropped)="drop($event)">
+        <mat-list-item role="listitem" class="mb-5" *ngFor="let activity of Activities" cdkDrag>
             <app-activity class="w-100" [activity]="activity" 
                                         (startActivityEvent)="startActivity($event)"
                                         (deleteActivityEvent)="deleteActivity($event)"

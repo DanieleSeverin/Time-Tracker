@@ -13,6 +13,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 //Components
 import { NavbarComponent } from './navbar/navbar.component';
@@ -40,7 +41,8 @@ const material_modules = [
   MatListModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  DragDropModule
 ];
 
 @NgModule({

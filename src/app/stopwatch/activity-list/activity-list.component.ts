@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddActivityModalComponent } from '../add-activity-modal/add-activity-modal.component';
@@ -14,6 +15,7 @@ export class ActivityListComponent implements OnInit {
   @Output() addActivityEvent = new EventEmitter<string>();
   @Output() deleteActivityEvent = new EventEmitter<Activity>();
   @Output() tickEvent = new EventEmitter();
+  @Output() dropEvent = new EventEmitter<CdkDragDrop<Activity[]>>();
   
   constructor(public dialog: MatDialog) { }
 
@@ -43,6 +45,10 @@ export class ActivityListComponent implements OnInit {
 
   tick(){
     this.tickEvent.emit();
+  }
+
+  drop(event: CdkDragDrop<Activity[]>) {
+    this.dropEvent.emit(event);
   }
 
 }
