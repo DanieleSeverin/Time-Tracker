@@ -4,15 +4,15 @@ A simple Angular app that allows users to track time spent on various activities
 
 ## Installation
 
-Clone the repository to your local machine using `git clone https://github.com/DanieleSeverin/Time-Tracker.git`
-Install the dependencies by running `npm i` in the project directory
-Start the project by running `ng serve`
+Clone the repository to your local machine using `git clone https://github.com/DanieleSeverin/Time-Tracker.git`.
+Install the dependencies by running `npm i` in the project directory.
+Start the project by running `ng serve`,
 
-The app will run on port 1000 and will be accessible at http://localhost:1000
+The app will run on port 1000 and will be accessible at http://localhost:1000.
 
 ## Quickstart
 
-To make it easy to start the app, a `quickstart.bat` (python is required) file is included in the repository. Double-clicking this file will open chrome and run the app on port 1000.
+To make it easy to start the app, a `quickstart.bat` file is included in the repository (python is required). Double-clicking this file will open chrome and run the app on port 1000.
 
 ## Note
 
