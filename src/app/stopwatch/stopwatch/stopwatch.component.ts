@@ -41,4 +41,15 @@ export class StopwatchComponent implements OnInit {
     moveItemInArray(this.Activities, event.previousIndex, event.currentIndex);
   }
 
+  clearActivities(): void {
+    const conf = confirm('Are you sure you want to clear times from all activities?');
+    if(!conf) return;
+    
+    this.Activities.forEach( a => {
+      a.active = false;
+      a.time = 0;
+    });
+    this.saveActivities();
+  }
+
 }

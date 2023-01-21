@@ -58,6 +58,26 @@
         }
 }
 
+// margin x
+@for $i from 1 through 10 {
+    $base: 0.25;
+    $value: $base * $i;
+    .mx-#{$i} { 
+        margin-left: $value + 0rem!important;
+        margin-right: $value + 0rem!important;
+        }
+}
+
+// margin y
+@for $i from 1 through 10 {
+    $base: 0.25;
+    $value: $base * $i;
+    .my-#{$i} { 
+        margin-top: $value + 0rem!important;
+        margin-bottom: $value + 0rem!important;
+        }
+}
+
 // margin-top
 @for $i from 1 through 10 {
     $base: 0.25;
@@ -103,6 +123,26 @@
         }
 }
 
+// padding x
+@for $i from 1 through 10 {
+    $base: 0.25;
+    $value: $base * $i;
+    .px-#{$i} { 
+        padding-left: $value + 0rem!important;
+        padding-right: $value + 0rem!important;
+        }
+}
+
+// padding y
+@for $i from 1 through 10 {
+    $base: 0.25;
+    $value: $base * $i;
+    .py-#{$i} { 
+        padding-top: $value + 0rem!important;
+        padding-bottom: $value + 0rem!important;
+        }
+}
+
 // padding-top
 @for $i from 1 through 10 {
     $base: 0.25;
@@ -139,6 +179,7 @@
         }
 }
 
+// Cursors
 .pointer{
     cursor: pointer;
 }

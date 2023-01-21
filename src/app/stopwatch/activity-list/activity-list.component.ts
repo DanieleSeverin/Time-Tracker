@@ -1,7 +1,5 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { AddActivityModalComponent } from '../add-activity-modal/add-activity-modal.component';
 import { Activity } from '../models/Activity.model';
 
 @Component({
@@ -12,26 +10,13 @@ import { Activity } from '../models/Activity.model';
 export class ActivityListComponent implements OnInit {
 
   @Input() Activities: Activity[] = [];
-  @Output() addActivityEvent = new EventEmitter<string>();
   @Output() deleteActivityEvent = new EventEmitter<Activity>();
   @Output() tickEvent = new EventEmitter();
   @Output() dropEvent = new EventEmitter<CdkDragDrop<Activity[]>>();
   
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(AddActivityModalComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if(result) this.addActivity(result.description);
-    });
-  }
-
-  addActivity(description: string){
-    this.addActivityEvent.emit(description);
   }
 
   startActivity(activity :Activity){

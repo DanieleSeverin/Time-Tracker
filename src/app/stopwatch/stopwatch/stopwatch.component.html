@@ -1,5 +1,7 @@
+<app-header (addActivityEvent)="addActivity($event)"
+            (clearActivitiesEvent)="clearActivities()"></app-header>
+
 <app-activity-list [Activities]="Activities" 
-                   (addActivityEvent)="addActivity($event)"
                    (deleteActivityEvent)="deleteActivity($event)"
                    (tickEvent)="saveActivities()"
                    (dropEvent)="drop($event)"></app-activity-list>

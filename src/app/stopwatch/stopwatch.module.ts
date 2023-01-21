@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { AddActivityModalComponent } from './add-activity-modal/add-activity-modal.component';
 import { ActivityComponent } from './activity/activity.component';
+import { HeaderComponent } from './header/header.component';
 
 const components = [
   StopwatchComponent,
@@ -25,6 +26,7 @@ const modules = [
     ...components,
     AddActivityModalComponent,
     ActivityComponent,
+    HeaderComponent,
   ],
   imports: [
     ...modules

@@ -1,4 +1,4 @@
-<div *ngIf="activity" class="grab box d-flex j-between a-center p-2">
+<div *ngIf="activity" class="grab box d-flex j-between a-center p-2" [ngClass]="{ 'active' : activity.active }">
     <div class="w-25 d-flex j-start a-center">
         <mat-icon class="me-5">drag_indicator</mat-icon>
         {{activity.description}}
