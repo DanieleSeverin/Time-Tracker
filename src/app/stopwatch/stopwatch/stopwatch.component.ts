@@ -22,6 +22,11 @@ export class StopwatchComponent implements OnInit {
     this.Activities = this._activity.getActivities();
   }
 
+  startActivity(activity :Activity){
+    this.Activities.forEach(a => a.active = false);
+    activity.active = true;
+  }
+
   addActivity(description :string): void {
     const activity = this._activity.newActivity(description);
     this._activity.addActivity(activity);

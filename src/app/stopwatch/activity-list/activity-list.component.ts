@@ -10,6 +10,7 @@ import { Activity } from '../models/Activity.model';
 export class ActivityListComponent implements OnInit {
 
   @Input() Activities: Activity[] = [];
+  @Output() startActivityEvent = new EventEmitter<Activity>();
   @Output() deleteActivityEvent = new EventEmitter<Activity>();
   @Output() tickEvent = new EventEmitter();
   @Output() dropEvent = new EventEmitter<CdkDragDrop<Activity[]>>();
@@ -20,8 +21,7 @@ export class ActivityListComponent implements OnInit {
   }
 
   startActivity(activity :Activity){
-    this.Activities.forEach(a => a.active = false);
-    activity.active = true;
+    this.startActivityEvent.emit(activity);
   }
 
   deleteActivity(activity :Activity){
