@@ -1,0 +1,17 @@
+<form [formGroup]="form"  autocomplete="off">
+    <div mat-dialog-content>
+        <h3>Aggiungi un'attività</h3>
+        <mat-form-field appearance="fill">
+            <mat-label>Descrizione</mat-label>
+            <input matInput name="description" maxlength={{DESCRIPTION_MAX_LENGTH}}
+                placeholder="Descrizione" formControlName="description">
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" [mat-dialog-close]="form.value" 
+                [disabled]="!form.valid">
+                    Aggiungi
+        </button>
+    </div>
+</form>

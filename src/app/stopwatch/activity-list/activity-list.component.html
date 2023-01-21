@@ -1,0 +1,15 @@
+<ng-container *ngIf="Activities.length > 0; else noData">
+    <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let activity of Activities" [value]="activity">
+            <app-activity [activity]="activity"></app-activity>
+        </mat-list-option>
+    </mat-selection-list>
+</ng-container>
+
+<ng-template #noData>
+    <div class="d-flex j-center mt-5">Non sono presenti attività</div>
+</ng-template>
+
+<div class="d-flex j-center mt-5">
+    <button mat-raised-button color="primary" (click)="openDialog()">Aggiungi</button>
+</div>
