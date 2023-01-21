@@ -12,7 +12,7 @@ The app will run on port 1000 and will be accessible at http://localhost:1000
 
 ## Quickstart
 
-To make it easy to start the app, a `quickstart.bat` file is included in the repository. Double-clicking this file will open chrome and run the app on port 1000.
+To make it easy to start the app, a `quickstart.bat` (python is required) file is included in the repository. Double-clicking this file will open chrome and run the app on port 1000.
 
 ## Note
 
