@@ -19,7 +19,7 @@ export class ActivityService {
       uuid : Uuid(),
       description: description,
       active: false,
-      time: 0
+      total_time: 0
     };
   }
 

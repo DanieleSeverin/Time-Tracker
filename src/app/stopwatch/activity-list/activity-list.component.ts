@@ -11,6 +11,7 @@ export class ActivityListComponent implements OnInit {
 
   @Input() Activities: Activity[] = [];
   @Output() startActivityEvent = new EventEmitter<Activity>();
+  @Output() stopActivityEvent = new EventEmitter<Activity>();
   @Output() deleteActivityEvent = new EventEmitter<Activity>();
   @Output() tickEvent = new EventEmitter();
   @Output() dropEvent = new EventEmitter<CdkDragDrop<Activity[]>>();
@@ -22,6 +23,10 @@ export class ActivityListComponent implements OnInit {
 
   startActivity(activity :Activity){
     this.startActivityEvent.emit(activity);
+  }
+
+  stopActivity(activity :Activity){
+    this.stopActivityEvent.emit(activity);
   }
 
   deleteActivity(activity :Activity){

@@ -4,7 +4,7 @@
         {{activity.description}}
     </div>
     <div class="w-25 d-flex j-center">
-        {{activity.time | hhmmss}}
+        {{ (activity.total_time + (activity.staging_time ?? 0)) | hhmmss}}
     </div>
     <div class="w-25 d-flex j-end a-center gap-5">
         <button *ngIf="!activity.active" mat-raised-button color="primary" (click)="startActivity(activity)">Start</button>

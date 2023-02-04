@@ -3,6 +3,7 @@
         <mat-list-item role="listitem" class="mb-5" *ngFor="let activity of Activities" cdkDrag>
             <app-activity class="w-100" [activity]="activity" 
                                         (startActivityEvent)="startActivity($event)"
+                                        (stopActivityEvent)="stopActivity($event)"
                                         (deleteActivityEvent)="deleteActivity($event)"
                                         (tickEvent)="tick()">
             </app-activity>

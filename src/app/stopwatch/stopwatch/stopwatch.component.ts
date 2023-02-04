@@ -27,6 +27,10 @@ export class StopwatchComponent implements OnInit {
     activity.active = true;
   }
 
+  stopActivity(activity :Activity){
+    this._activity.saveActivities(this.Activities);
+  }
+
   addActivity(description :string): void {
     const activity = this._activity.newActivity(description);
     this._activity.addActivity(activity);
@@ -52,7 +56,7 @@ export class StopwatchComponent implements OnInit {
     
     this.Activities.forEach( a => {
       a.active = false;
-      a.time = 0;
+      a.total_time = 0;
     });
     this.saveActivities();
   }

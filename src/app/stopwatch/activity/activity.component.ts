@@ -12,6 +12,7 @@ export class ActivityComponent implements OnInit {
 
   @Input() activity!: Activity;
   @Output() startActivityEvent = new EventEmitter<Activity>();
+  @Output() stopActivityEvent = new EventEmitter<Activity>();
   @Output() deleteActivityEvent = new EventEmitter<Activity>();
   @Output() tickEvent = new EventEmitter();
 
@@ -27,13 +28,18 @@ export class ActivityComponent implements OnInit {
   }
 
   startActivity(activity :Activity){
+    activity.last_start_time = new Date();
     this.startActivityEvent.emit(activity);
     this.subscription = this.timer().subscribe();
   }
 
   stopActivity(activity :Activity){
+    activity.last_start_time = undefined;
+    if(activity.staging_time) activity.total_time += activity.staging_time;
+    activity.staging_time = 0;
     this.subscription?.unsubscribe();
     activity.active = false;
+    this.stopActivityEvent.emit(activity);
   }
 
   deleteActivity(activity :Activity){
@@ -54,7 +60,8 @@ export class ActivityComponent implements OnInit {
   }
 
   tick(){
-    this.activity.time++;
+    if(this.activity.last_start_time)
+      this.activity.staging_time = (new Date().getTime() - this.activity.last_start_time.getTime()) / 1000;
     this.tickEvent.emit();
   }
 
