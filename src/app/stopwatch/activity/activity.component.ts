@@ -66,6 +66,8 @@ export class ActivityComponent implements OnInit {
   }
 
   resetActivity(activity :Activity){
+    const conf = confirm("Are you sure you want to reset this activity?");
+    if(!conf) return;
     activity.total_time = 0;
     activity.staging_time = 0;
     activity.last_start_time = undefined;
