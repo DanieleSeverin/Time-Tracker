@@ -7,6 +7,7 @@
         {{ (activity.total_time + (activity.staging_time ?? 0)) | hhmmss}}
     </div>
     <div class="w-25 d-flex j-end a-center gap-5">
+        <button *ngIf="activity.total_time" mat-raised-button color="warning" (click)="resetActivity(activity)">Clear</button>
         <button *ngIf="!activity.active" mat-raised-button color="primary" (click)="startActivity(activity)">Start</button>
         <button *ngIf="activity.active" mat-raised-button color="accent" (click)="stopActivity(activity)">Stop</button>
         <mat-icon class="pointer" color="warn" (click)="deleteActivity(activity)">delete_forever</mat-icon>

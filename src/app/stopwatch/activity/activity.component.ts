@@ -65,4 +65,11 @@ export class ActivityComponent implements OnInit {
     this.tickEvent.emit();
   }
 
+  resetActivity(activity :Activity){
+    activity.total_time = 0;
+    activity.staging_time = 0;
+    activity.last_start_time = undefined;
+    this.stopActivityEvent.emit();
+  }
+
 }
