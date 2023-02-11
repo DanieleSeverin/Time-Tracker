@@ -15,8 +15,16 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli@13.1.2
-    npm install
-    ng build --prod
-  displayName: 'npm install and build'
+- task: PowerShell@2 
+  inputs: 
+    targetType: 'inline' 
+    script: | 
+      npm install -g @angular/cli@13.1.2 
+      npm install 
+      ng build --prod
+
+# - script: |
+#     npm install -g @angular/cli@13.1.2
+#     npm install
+#     ng build --prod
+#   displayName: 'npm install and build'
